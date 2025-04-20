@@ -9,8 +9,14 @@ import lombok.Setter;
 public class Vehicle extends BaseModel {
 
 
-    Integer vehicleNumeber;
-    String vehicleType;
+    private Integer vehicleNumber;
+    private VehicleType vehicleType;
+
+    public static void main(String[] args) {
+        Vehicle v = new Vehicle();
+        v.setVehicleType(VehicleType.CAR);  // <- if this line has an error, Lombok isn't working
+        System.out.println(v.getVehicleType());
+    }
 
 
 }
