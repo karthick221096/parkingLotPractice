@@ -4,6 +4,7 @@ import com.karthick.parkinglot.model.ParkingSlot;
 import com.karthick.parkinglot.model.Ticket;
 import com.karthick.parkinglot.model.Vehicle;
 import com.karthick.parkinglot.model.VehicleType;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -28,6 +29,7 @@ public class TicketService {
         ticket.setVehicle(vehicle);
         ticket.setParkedAt(new Date());
         ticket.setParkingSlot(slot);
+        System.out.println("ticket from Ticketservice"+ticket);
         return ticket;
     }
 

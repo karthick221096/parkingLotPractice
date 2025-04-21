@@ -9,13 +9,15 @@ import lombok.Setter;
 public class Vehicle extends BaseModel {
 
 
-    private Integer vehicleNumber;
+    private String vehicleNumber;
     private VehicleType vehicleType;
 
     public static void main(String[] args) {
         Vehicle v = new Vehicle();
         v.setVehicleType(VehicleType.CAR);  // <- if this line has an error, Lombok isn't working
         System.out.println(v.getVehicleType());
+        v.setVehicleNumber("ABCDTN32");  // <- if this line has an error, Lombok isn't working
+        System.out.println(v.getVehicleNumber());
     }
 
 

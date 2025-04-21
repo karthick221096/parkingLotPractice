@@ -9,8 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @RequestMapping("/ticket")
 public class TicketController {
 
@@ -19,7 +20,10 @@ public class TicketController {
 
     @PostMapping("/book")
     public Ticket bookTicket(@RequestBody Vehicle vehicle){
-        return ticketService.bookTicket(vehicle);
+        System.out.println("Vehicle received: " + vehicle + vehicle.getVehicleType() + vehicle.getVehicleNumber());
+        System.out.println(ticketService);
+        System.out.println(ticketService.bookTicket(vehicle));
+        return ticketService.bookTicket(vehicle) ;
     }
 
     @PostMapping("/unbook")
